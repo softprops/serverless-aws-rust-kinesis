@@ -107,7 +107,9 @@ $ npx serverless remove
 
 * See the [aws rust runtime's documentation](https://github.com/awslabs/aws-lambda-rust-runtime) for more information on writing Rustlang lambda functions
 
-* See the [Serverless Framework docs](https://serverless.com/framework/docs/providers/aws/events/streams/) for more information on configuration options working with for kinesis streams
+* See the [Serverless Framework docs](https://serverless.com/framework/docs/providers/aws/events/streams/) for more information on configuration options for kinesis streams
+
+* See the [AWS docs](https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html) for more information on general lambda information about working with kinesis streams.
 
 ## 👯 Contributing
 
