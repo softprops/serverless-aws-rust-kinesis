@@ -13,7 +13,7 @@ fn handler(
     for record in event.records {
         println!(
             "{}",
-            from_utf8(&record.kinesis.data.0)
+            from_utf8(&record.kinesis.data.0).map(|s|s.to_owned())
                 .unwrap_or_else(|err| format!("expected utf8 data: {}", err))
         );
     }
