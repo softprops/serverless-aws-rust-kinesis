@@ -45,6 +45,9 @@ package:
 plugins:
   - serverless-rust
 
+custom:
+  default_stream: arn:aws:kinesis:us-east-1:123456789:stream/default-stream-name
+
 functions:
   hello:
     # handler value syntax is `{cargo-package-name}.{bin-name}`
@@ -54,8 +57,8 @@ functions:
     events:
       - stream:
           type: kinesis
-          arn: ${env:KINESIS_STREAM_ARN}
-          #enabled: false
+          arn: ${env:KINESIS_STREAM_ARN, self:custom.default_stream}
+          # enabled: false
           # batchSize: 10
           # startingPosition: TRIM_HORIZON
 
