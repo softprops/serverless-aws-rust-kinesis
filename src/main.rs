@@ -13,9 +13,8 @@ fn handler(
     for record in event.records {
         println!(
             "{}",
-            base64::decode(&record.kinesis.data.0)
-                .map(|bytes| from_utf8(&bytes).unwrap_or_default().to_owned())
-                .unwrap_or_else(|err| format!("failed to decode record.data {}", err))
+            from_utf8(&record.kinesis.data.0)
+                .unwrap_or_else(|err| format!("expected utf8 data: {}", err))
         );
     }
     Ok(())
