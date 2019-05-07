@@ -1,6 +1,6 @@
 # serverless AWS Rust kinesis stream template
 
-A sample template for bootstraping [Rustlang AWS Lambda](https://github.com/awslabs/aws-lambda-rust-runtime/)  [kinesis stream](https://aws.amazon.com/kinesis/data-streams/) applications with ⚡ serverless framework ⚡
+A sample template for bootstraping [Rustlang AWS Lambda](https://github.com/awslabs/aws-lambda-rust-runtime/)  [kinesis stream](https://aws.amazon.com/kinesis/data-streams/) 🚰 applications with ⚡ serverless framework ⚡
 
 ## ✨ features
 
@@ -68,6 +68,7 @@ $ travis enable
 # https://serverless.com/framework/docs/providers/aws/guide/credentials/
 $ travis env set AWS_ACCESS_KEY_ID 'xxx'
 $ travis env set AWS_SECRET_ACCESS_KEY 'xxx'
+$ travis env set  KINESIS_STREAM_ARN 'xxx'
 ```
 
 > ⭐ You can optionally generate code coverage reports with [coveralls](http://coveralls.io/) by enabling your repo [here](https://coveralls.io/repos/new). You may need to sync repos first. You can then view your coverage reports at https://coveralls.io/github/{username}/{my-new-service}
@@ -82,7 +83,8 @@ With your function deployed you can now start triggering it using `serverless` f
 the AWS integration you've configured to trigger it on your behalf
 
 ```sh
-$ npx serverless invoke -f hello -d '{"foo":"bar"}'
+$ npx serverless invoke local -f hello \
+  < tests/example-event.json
 ```
 
 ## 🔬 logs
