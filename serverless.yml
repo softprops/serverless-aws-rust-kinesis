@@ -55,7 +55,7 @@ functions:
       - stream:
           type: kinesis
           arn: ${env:KINESIS_STREAM_ARN}
-          # enabled: false
+          #enabled: false
           # batchSize: 10
           # startingPosition: TRIM_HORIZON
 
